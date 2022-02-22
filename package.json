@@ -1,0 +1,17 @@
+{
+  "name": "patterns",
+  "version": "0.0.1",
+  "description": "GoF patterns in Typescript. Setup with ESLint / Prettier / Babel and Jest from scratch",
+  "main": "src/index.ts",
+  "author": "GE28",
+  "repository": "github:GE28/patterns",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.19",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  }
+}
