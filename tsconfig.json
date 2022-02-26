@@ -5,6 +5,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "rootDirs": ["src", "tests"],
+    "baseUrl": "src",
     "outDir": "out",
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
@@ -15,7 +16,10 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "declaration": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "paths": {
+      "@decorators/*": ["./decorators/*"]
+    }
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules"]

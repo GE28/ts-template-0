@@ -1,4 +1,4 @@
-import logKeyName from "./decorators/logKeyName";
+import logKeyName from "@decorators/logKeyName";
 
 class Hello {
   @logKeyName
