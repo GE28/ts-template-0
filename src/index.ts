@@ -1,9 +1,9 @@
-import logKeyName from "@decorators/logKeyName";
+import logKeyName from '@decorators/logKeyName';
 
 class Hello {
   @logKeyName
   static world(): void {
-    console.log("Hello World!");
+    console.log('Hello World!');
   }
 }
 
