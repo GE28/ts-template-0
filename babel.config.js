@@ -17,8 +17,6 @@ function getTsConfigPaths() {
     });
   });
 
-  console.log(moduleResolverOptions);
-
   return Object.assign(
     moduleResolverOptions,
     options.baseUrl && {
