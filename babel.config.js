@@ -17,19 +17,13 @@ function getTsConfigPaths() {
     });
   });
 
+  const absolutePathsRegex = {
+    '^[^@/.]((?!/).*)': options.baseUrl + '\\0'
+  };
+
   return Object.assign(
     moduleResolverOptions,
-    options.baseUrl && {
-      '^[^@/]((?!/).*)': ([pathOrModule]) => {
-        try {
-          require(pathOrModule);
-          return pathOrModule;
-        } catch (e) {
-          const srcPath = options.baseUrl + pathOrModule;
-          return srcPath;
-        }
-      }
-    }
+    options.baseUrl && absolutePathsRegex
   );
 }
 
