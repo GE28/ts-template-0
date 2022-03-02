@@ -1,10 +1,10 @@
 {
   "name": "patterns",
   "version": "0.0.1",
-  "description": "GoF patterns in Typescript. Setup with ESLint / Prettier / Babel and Jest from scratch",
+  "description": "TypeScript project from scratch using Babel, Jest, ESLint and Prettier",
   "main": "src/index.ts",
   "author": "GE28",
-  "repository": "github:GE28/patterns",
+  "repository": "github:GE28/ts-template-0",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.17.6",
