@@ -3,28 +3,26 @@
 function getTsConfigPaths() {
   const config = require('./tsconfig.json');
   const options = config.compilerOptions || { paths: {} };
+  const baseUrl = options.baseUrl;
 
   const paths = options.paths;
   const moduleResolverOptions = {};
 
   Object.keys(paths).forEach((key) => {
     paths[key].forEach((_key, i) => {
-      const babelKey = key.replace(/^/, '^').replace(/\*/, '(.*)');
-      const babelValue = paths[key][i]
-        .replace(/(\.\/)/, options.baseUrl)
+      const moduleResolverKey = key.replace(/^/, '^').replace(/\*/, '(.*)');
+      const moduleResolverValue = paths[key][i]
+        .replace(/(\.\/)/, baseUrl)
         .replace(/(\/\*)/, '/\\1');
-      moduleResolverOptions[babelKey] = babelValue;
+      moduleResolverOptions[moduleResolverKey] = moduleResolverValue;
     });
   });
 
   const absolutePathsRegex = {
-    '^[^@/.]((?!/).*)': options.baseUrl + '\\0'
+    '^[^@/.]((?!/).*)': baseUrl + '\\0'
   };
 
-  return Object.assign(
-    moduleResolverOptions,
-    options.baseUrl && absolutePathsRegex
-  );
+  return Object.assign(moduleResolverOptions, baseUrl && absolutePathsRegex);
 }
 
 module.exports = {
@@ -42,5 +40,5 @@ module.exports = {
       }
     ]
   ],
-  ignore: ['./tests']
+  ignore: ['./src/**/*.spec.ts']
 };
