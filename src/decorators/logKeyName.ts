@@ -6,7 +6,7 @@ export default function logKeyName(
   const originalMethod = descriptor.value;
 
   descriptor.value = function logKeyNameBeforeOriginal(...args: Array<any>) {
-    process.stdout.write(`${target.name}.${key}: `);
+    process.stdout.write(`${target.name || target.constructor.name}.${key}: `);
     originalMethod.apply(this, args);
   };
 }
