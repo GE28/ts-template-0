@@ -4,7 +4,7 @@
   "description": "GoF patterns in Typescript. Setup with ESLint / Prettier / Babel and Jest from scratch",
   "main": "src/index.ts",
   "author": "GE28",
-  "repository": "github:GE28/patterns",
+  "repository": "github:GE28/ts-template-0",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.17.6",
